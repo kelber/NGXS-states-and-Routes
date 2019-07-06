@@ -5,6 +5,8 @@ import { TutorialState } from '../state/tutorial.state';
 import { Observable } from 'rxjs';
 import { RemoveTutorial } from '../actions/tutorial.actions';
 
+// Rota
+import { Navigate } from '@ngxs/router-plugin';
 
 @Component({
   selector: 'app-read',
@@ -29,6 +31,16 @@ tutorials$: Observable<Tutorial>;
    }
 
   ngOnInit() {
+  }
+
+  // Mudar Rota usando Navigate
+  backRoot() {
+    this.store.dispatch(new Navigate(['/']))
+  }
+
+
+  onClick() {
+    this.store.dispatch(new Navigate(['/posts']))
   }
 
 }

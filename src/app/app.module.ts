@@ -12,11 +12,15 @@ import { TutorialState,  } from './state/tutorial.state';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 
+import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
+import { PostsComponent } from './posts/posts.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     ReadComponent,
-    CreateComponent
+    CreateComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +30,7 @@ import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
     ],
        { developmentMode: true }
     ),
+    NgxsRouterPluginModule.forRoot(),   // []
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot()
 
